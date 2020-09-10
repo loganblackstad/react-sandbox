@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-export const Component = (props) => {
+
+export const Users = (props) => {
   return (
     <div>
       {props.children}
@@ -8,4 +9,4 @@ export const Component = (props) => {
   )
 }
 
-export default Component;
+export default Users;
