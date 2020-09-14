@@ -5,6 +5,8 @@ export const FunctionalUser = (props) => {
   //props have to be passed into a functional component
   // return (<div>Users Functional Component</div>)
 
+  // Functional COmponents are stateless components
+
   let age = props.age;
 
   return (
@@ -12,7 +14,7 @@ export const FunctionalUser = (props) => {
       <b>Functional User Component</b>
       <br />
       <p>{props.children}</p>
-      <p>{props.age ? props.age : 'NA'}</p>
+      <p>{age ? props.age : 'NA'}</p>
     </div>
   )
 }

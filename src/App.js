@@ -3,9 +3,38 @@ import FunctionalUser from './components/FunctionalUser.js';
 import ClassUser from './components/ClassUser.js';
 import './App.css';
 
+
+const MyInput = (props) => {
+  return (
+    <input type="text" ref={props.inputRef} />)
+}
+
+const CustomFuncComp = (props) => {
+
+  let textRef = null;
+
+  const handleClick = () => {
+    alert(`yey, input val is ${textRef.value}`)
+  }
+
+  return (
+    <div style={styles.myInput}>
+      <MyInput inputRef={(input) => { textRef = input; }} />
+      <input type="button" value="show input" onClick={handleClick} />
+    </div>
+  );
+}
+
 function App() {
+
+
   return (
     <div className="App">
+
+
+      <div>
+        <CustomFuncComp />
+      </div>
 
       <ClassUser />
       {/* props can be passed down through class components */}
@@ -19,8 +48,32 @@ function App() {
       <FunctionalUser>Prop1</FunctionalUser>
       <FunctionalUser age="25">Prop2</FunctionalUser>
 
+      <hr />
+
+      <div>
+        <span>First Name: </span>
+        <input type="text" />
+      </div>
+      <div>
+        <span>Last Name: </span>
+        <input type="text" />
+      </div>
+      <div>
+        <span>Age: </span>
+        <input type="text" />
+      </div>
+      <div>
+        {/* <button onClick={() => greetUser("John")}>Click Here</button> */}
+      </div>
+
+
     </div>
   );
+}
+const styles = {
+  myInput: {
+    'margin': '20px'
+  }
 }
 
 export default App;
