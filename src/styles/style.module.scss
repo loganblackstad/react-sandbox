@@ -1,0 +1,60 @@
+// Sass features (that don't exist in CSS yet):
+//   - variables (check)
+//   - nesting (check)
+//   - partials (check)
+//   - mixins (check)
+//   - inheritance
+
+// partials - scss files that need to be imported
+// filename structure: "_filename.scss"
+// need @use or @import to use partials
+// @use loads partials as a module
+
+// -------------------------------------------
+
+
+// mix-in - create css declarations with declared $property(s)
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@import "./variables";
+@use "./header";
+
+.CustomFuncComp {
+  border: solid 1px rgb(185, 73, 73);
+}
+
+.myInput {
+  margin: '20px';
+}
+
+button {
+  @include border-radius(5px);
+  padding: 10px;
+}
+
+.contact button {
+  background: $primaryBtn;
+}
+
+// "flexCenter" mix-in imported from "_header.scss"  
+.contact{
+  @include flexCenter;
+}
+
+// Inheritance
+
+%message-shared {
+  border: 1px solid rgb(204, 38, 38);
+  padding: 10px;
+  color: #333;
+}
+
+.info {
+  @extend %message-shared;
+}
+
+// Operators
+// Doing math in your CSS is very helpful
+// Sass has a handful of standard math operators like +, -, *, /, and %

@@ -1,7 +1,7 @@
 import React from 'react';
 import FunctionalUser from './components/FunctionalUser.js';
 import ClassUser from './components/ClassUser.js';
-import './styles/style.css';
+import styles from './styles/style.css';
 
 
 const MyInput = (props) => {
@@ -31,13 +31,8 @@ function App() {
   return (
     <div className="App">
 
-      <div className="SassIntro">
 
-      </div>
-
-
-
-      <div>
+      <div style={styles.CustomFuncComp}>
         <CustomFuncComp />
       </div>
 
@@ -75,10 +70,10 @@ function App() {
     </div>
   );
 }
-const styles = {
-  myInput: {
-    'margin': '20px'
-  }
-}
+// const styles = {
+//   myInput: {
+//     'margin': '20px'
+//   }
+// }
 
 export default App;
