@@ -1,7 +1,7 @@
 import React from 'react';
 import FunctionalUser from './components/FunctionalUser.js';
 import ClassUser from './components/ClassUser.js';
-import './App.css';
+import './styles/style.css';
 
 
 const MyInput = (props) => {
@@ -30,6 +30,11 @@ function App() {
 
   return (
     <div className="App">
+
+      <div className="SassIntro">
+
+      </div>
+
 
 
       <div>
